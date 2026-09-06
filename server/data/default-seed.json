@@ -1,0 +1,13 @@
+{
+  "title": "Daily Specials",
+  "items": [
+    { "id": "1", "name": "Country Fried Steak & Eggs", "price": 12.29, "active": true },
+    { "id": "2", "name": "Greek Skillet", "price": 9.99, "active": true },
+    { "id": "3", "name": "Cabbage Rolls", "price": 10.99, "active": true },
+    { "id": "4", "name": "Tiramisu Pancakes", "price": 9.99, "active": true },
+    { "id": "5", "name": "Blueberry Pancakes", "price": 9.99, "active": true },
+    { "id": "6", "name": "Biscuits & Gravy", "price": 8.99, "active": true },
+    { "id": "7", "name": "Mediterranean Omelet", "price": 8.99, "active": true },
+    { "id": "8", "name": "Meatlovers Omelet", "price": 7.99, "active": true }
+  ]
+}

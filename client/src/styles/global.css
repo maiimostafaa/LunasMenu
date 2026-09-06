@@ -1,0 +1,272 @@
+:root {
+  --bg: #1c1b19;
+  --fg: #f5f1e8;
+  --accent: #f0a93b;
+  --muted: #9a958a;
+  --danger: #d9534f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Kalam', cursive;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Display page — meant to fill a TV in a kiosk browser                    */
+/* ---------------------------------------------------------------------- */
+
+.board {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4vh 6vw;
+}
+
+.board-title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  letter-spacing: 0.04em;
+  margin: 0 0 1vh 0;
+  text-align: center;
+}
+
+.board-title-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+  color: var(--accent);
+}
+
+.board-title-row svg {
+  width: clamp(1.5rem, 3vw, 2.5rem);
+  height: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.board-divider {
+  width: min(500px, 40vw);
+  color: var(--fg);
+  margin-bottom: 3vh;
+}
+
+.board-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6vh;
+  text-align: center;
+  max-width: 90vw;
+}
+
+.board-item {
+  font-size: clamp(1.4rem, 3.2vw, 2.6rem);
+  white-space: nowrap;
+}
+
+.board-item .price {
+  color: var(--accent);
+  margin-left: 0.6em;
+}
+
+.board-corner {
+  position: absolute;
+  color: var(--fg);
+  opacity: 0.9;
+}
+
+.board-corner.top-left {
+  top: 4vh;
+  left: 3vw;
+  width: clamp(60px, 8vw, 120px);
+}
+
+.board-corner.top-right {
+  top: 4vh;
+  right: 3vw;
+  width: clamp(60px, 8vw, 120px);
+}
+
+.board-corner.bottom-left {
+  bottom: 4vh;
+  left: 3vw;
+  width: clamp(70px, 9vw, 140px);
+}
+
+.board-corner.bottom-right {
+  bottom: 4vh;
+  right: 3vw;
+  width: clamp(90px, 11vw, 170px);
+}
+
+.board-empty {
+  color: var(--muted);
+  font-size: 1.5rem;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Edit page — meant for a phone                                           */
+/* ---------------------------------------------------------------------- */
+
+.edit-page {
+  min-height: 100%;
+  padding: 24px 16px 80px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.edit-header {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20%;
+}
+
+.pin-form input {
+  font-size: 1.5rem;
+  letter-spacing: 0.3em;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid var(--muted);
+  background: #262420;
+  color: var(--fg);
+}
+
+.btn {
+  font-size: 1.1rem;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: #1c1b19;
+  font-weight: bold;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid var(--muted);
+  color: var(--fg);
+}
+
+.btn.small {
+  padding: 8px 12px;
+  font-size: 0.95rem;
+}
+
+.error-text {
+  color: var(--danger);
+  text-align: center;
+  min-height: 1.2em;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #262420;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.item-row.inactive {
+  opacity: 0.5;
+}
+
+.item-row input[type='text'] {
+  flex: 1;
+  min-width: 0;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--muted);
+  background: #1c1b19;
+  color: var(--fg);
+}
+
+.item-row input[type='number'] {
+  width: 80px;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--muted);
+  background: #1c1b19;
+  color: var(--fg);
+}
+
+.item-row .row-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item-row .row-actions button {
+  background: none;
+  border: none;
+  color: var(--fg);
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 2px 6px;
+}
+
+.item-row .row-actions button:disabled {
+  opacity: 0.25;
+}
+
+.item-row .delete-btn {
+  color: var(--danger);
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  padding: 4px 8px;
+}
+
+.edit-footer {
+  position: sticky;
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg) 70%, transparent);
+  padding: 16px 0 8px;
+  display: flex;
+  gap: 10px;
+}
+
+.edit-footer .btn {
+  flex: 1;
+}
+
+.save-status {
+  text-align: center;
+  min-height: 1.4em;
+  color: var(--muted);
+  font-size: 0.9rem;
+}

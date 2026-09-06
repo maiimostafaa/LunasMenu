@@ -1,0 +1,16 @@
+[Unit]
+Description=Specials Board server
+After=network.target
+
+[Service]
+Type=simple
+# Update this path if you clone the repo somewhere other than /home/pi.
+WorkingDirectory=/home/pi/specials-board
+ExecStart=/usr/bin/node server/index.js
+Restart=on-failure
+RestartSec=3
+User=pi
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
