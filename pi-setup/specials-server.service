@@ -4,8 +4,9 @@ After=network.target
 
 [Service]
 Type=simple
-# Update this path if you clone the repo somewhere other than /home/pi.
-WorkingDirectory=/home/pi/specials-board
+# Update this path if you clone the repo somewhere other than /home/pi,
+# or under a different name.
+WorkingDirectory=/home/pi/LunasMenu
 ExecStart=/usr/bin/node server/index.js
 Restart=on-failure
 RestartSec=3

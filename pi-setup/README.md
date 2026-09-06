@@ -17,8 +17,10 @@ sudo systemctl start specials-server
 
 Check it's up: `sudo systemctl status specials-server`, or `curl http://localhost:3000/api/specials`.
 
-If you cloned the repo somewhere other than `/home/pi/specials-board`, edit the
-`WorkingDirectory` line in `/etc/systemd/system/specials-server.service` first.
+If you cloned the repo somewhere other than `/home/pi/LunasMenu`, or your user
+isn't `pi` (newer Raspberry Pi OS lets you pick any username when flashing),
+edit the `WorkingDirectory` and `User` lines in
+`/etc/systemd/system/specials-server.service` first.
 
 ## 2. Auto-login to the desktop on boot
 
@@ -29,6 +31,11 @@ sudo raspi-config
 `System Options` → `Boot / Auto Login` → `Desktop Autologin`.
 
 ## 3. Launch Chromium in kiosk mode on login
+
+**First**: recent Raspberry Pi OS (Bookworm) boots into a Wayland session by
+default, where the `xset` screen-blanking commands in `kiosk.sh` silently do
+nothing and the TV will go to sleep. Switch the session to X11:
+`sudo raspi-config` → `Advanced Options` → `Wayland` → `X11`, then reboot.
 
 ```bash
 sudo apt install -y unclutter chromium-browser
@@ -42,7 +49,7 @@ Create `~/.config/autostart/specials-kiosk.desktop`:
 [Desktop Entry]
 Type=Application
 Name=Specials Kiosk
-Exec=/home/pi/specials-board/pi-setup/kiosk.sh
+Exec=/home/pi/LunasMenu/pi-setup/kiosk.sh
 X-GNOME-Autostart-enabled=true
 ```
 
