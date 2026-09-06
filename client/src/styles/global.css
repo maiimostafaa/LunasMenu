@@ -83,13 +83,21 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.7vh;
+  gap: 0.126em;
   text-align: center;
   max-width: 78vw;
+  /* Scale with item count so any number of specials fits the 58vh menu
+     area: 3.13vw is the mockup-matched size (reached at 8 items), and the
+     calc shrinks the lines to keep N of them (line-height 1.2 + gap)
+     inside the space between title and heart. --width-scale is set from
+     JS only when a single line would overflow horizontally. */
+  font-size: calc(
+    clamp(1rem, 58vh / (1.326 * var(--item-count, 8) - 0.126), 3.13vw) *
+    var(--width-scale, 1)
+  );
 }
 
 .board-item {
-  font-size: clamp(1.2rem, 3.13vw, 4rem);
   text-transform: uppercase;
   white-space: nowrap;
 }

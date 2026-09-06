@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { fetchSpecials, connectSocket } from '../api.js'
 
 export default function Display() {
   const [data, setData] = useState(null)
+  const listRef = useRef(null)
 
   useEffect(() => {
     fetchSpecials().then(setData).catch(() => {})
@@ -11,6 +12,26 @@ export default function Display() {
   }, [])
 
   const items = (data?.items || []).filter((it) => it.active !== false)
+
+  // Count-based sizing lives in CSS; this only steps in when one long item
+  // name would still overflow horizontally at that size.
+  useEffect(() => {
+    const el = listRef.current
+    if (!el) return
+    let cancelled = false
+    document.fonts.ready.then(() => {
+      if (cancelled || !listRef.current) return
+      el.style.removeProperty('--width-scale')
+      const widest = Math.max(0, ...[...el.children].map((li) => li.scrollWidth))
+      const available = window.innerWidth * 0.78
+      if (widest > available) {
+        el.style.setProperty('--width-scale', (available / widest).toFixed(3))
+      }
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [items.map((it) => it.name + it.price).join('|')])
 
   return (
     <div className="board">
@@ -31,7 +52,7 @@ export default function Display() {
       {items.length === 0 ? (
         <p className="board-empty">No specials posted yet — add some from the edit page.</p>
       ) : (
-        <ul className="board-list">
+        <ul className="board-list" ref={listRef} style={{ '--item-count': items.length }}>
           {items.map((item) => (
             <li key={item.id} className="board-item">
               {item.name.toUpperCase()}
