@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "specials-board-dev",
+      "runtimeExecutable": "env",
+      "runtimeArgs": ["PORT=3000", "npm", "run", "dev"],
+      "port": 5173
+    }
+  ]
+}
