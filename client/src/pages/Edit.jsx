@@ -3,8 +3,14 @@ import { fetchSpecials, saveSpecials, login } from '../api.js'
 
 const TOKEN_KEY = 'specials-board-token'
 
+// crypto.randomUUID only exists on secure origins (https/localhost); phones
+// load this page over plain http from the Pi, so fall back to a cheap id.
+function makeId() {
+  return crypto.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`
+}
+
 function emptyItem() {
-  return { id: crypto.randomUUID(), name: '', price: '', active: true }
+  return { id: makeId(), name: '', price: '', active: true }
 }
 
 export default function Edit() {

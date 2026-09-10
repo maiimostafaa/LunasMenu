@@ -20,8 +20,12 @@ xset -dpms
 # Hide the mouse cursor when idle (requires: sudo apt install unclutter).
 unclutter -idle 0.5 -root &
 
-chromium-browser \
+# Package name differs across Raspberry Pi OS releases.
+BROWSER=$(command -v chromium-browser || command -v chromium)
+
+"$BROWSER" \
   --kiosk \
+  --password-store=basic \
   --noerrdialogs \
   --disable-infobars \
   --incognito \
