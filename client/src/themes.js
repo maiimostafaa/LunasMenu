@@ -87,19 +87,19 @@ export const THEMES = {
       right: { src: 'spark_right.svg', width: '6.6vw' },
     },
     doodles: [
-      { src: 'top_heart.svg', top: '6.67vh', left: '2.82vw', width: '14.29vw' },
+      { src: 'top_heart.svg', top: '6.67vh', left: '2.82vw', width: '11.43vw' },
       /* heart_coffee.svg is wider/shorter (aspect-wise) than top_heart.svg,
          so matching width alone left it oversized. Sized here so its
          visible artwork spans the same vertical range as top_heart's,
          mirrored. */
-      { src: 'heart_coffee.svg', top: '6.68vh', right: '2.39vw', width: '18.22vw' },
+      { src: 'heart_coffee.svg', top: '6.68vh', right: '2.39vw', width: '14.58vw' },
       /* sparkles_left/right are near-identical mirror-image files; both
          sized/positioned to match sparkles_left, and centered at 50%
          screen height. */
       { src: 'sparkles_left.svg', top: '44.16vh', left: '6.96vw', width: '3.66vw' },
       { src: 'sparkles_right.svg', top: '44.16vh', right: '6.96vw', width: '3.66vw' },
-      { src: 'roses.svg', bottom: '7.91vh', left: '2.16vw', width: '17.02vw' },
-      { src: 'tulips.svg', bottom: '3.05vh', right: '1.36vw', width: '18.25vw' },
+      { src: 'roses.svg', bottom: '7.91vh', left: '2.16vw', width: '13.62vw' },
+      { src: 'tulips.svg', bottom: '3.05vh', right: '1.36vw', width: '14.6vw' },
       { src: 'bottom_heart.svg', bottom: '6.11vh', left: '40.12vw', width: '19.73vw' },
     ],
   },
