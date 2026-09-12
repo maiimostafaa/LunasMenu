@@ -20,6 +20,15 @@ dotenv.config({ path: path.join(__dirname, '.env') })
 const PORT = process.env.PORT || 3000
 const EDIT_PIN = process.env.EDIT_PIN || '1234'
 
+// Kept in sync by hand with client/src/themes.js — the client is the source
+// of truth for what a theme actually looks like, this list just stops a bad
+// theme id from being saved and breaking the display until it's fixed.
+const THEME_IDS = [
+  'og', 'halloween', 'thanksgiving', 'christmas', 'valentines',
+  'st-pattys', 'usa', 'mothers-day', 'fathers-day',
+]
+const DEFAULT_THEME = 'og'
+
 if (!process.env.EDIT_PIN) {
   console.warn('[specials-board] EDIT_PIN not set in server/.env — using the default "1234". Change this before it goes live.')
 }
@@ -62,7 +71,7 @@ app.get('/api/specials', (req, res) => {
 })
 
 app.post('/api/specials', requireAuth, (req, res) => {
-  const { title, items } = req.body || {}
+  const { title, items, theme } = req.body || {}
   if (!Array.isArray(items)) {
     return res.status(400).json({ error: 'items must be an array' })
   }
@@ -78,6 +87,7 @@ app.post('/api/specials', requireAuth, (req, res) => {
   const data = writeSpecials({
     title: typeof title === 'string' && title.trim() ? title.trim() : 'Daily Specials',
     items: cleanItems,
+    theme: THEME_IDS.includes(theme) ? theme : DEFAULT_THEME,
   })
 
   io.emit('specials:update', data)
