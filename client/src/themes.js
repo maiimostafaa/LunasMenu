@@ -32,7 +32,9 @@ export const THEMES = {
       { src: 'olive-branch.svg', bottom: '7.2vh', right: '2.3vw', width: '20vw' },
       { src: 'sparkles-left.svg', top: '44.1vh', left: '5.9vw', width: '7.5vw' },
       { src: 'sparkles-right.svg', top: '44.1vh', right: '5.9vw', width: '7.5vw' },
-      { src: 'bottom-heart.svg', bottom: '7.55vh', left: '13.25vw', width: '23.5vw' },
+      /* left is set so the ink (accounting for this file's asymmetric
+         padding) is centered horizontally at 50% screen width. */
+      { src: 'bottom-heart.svg', bottom: '7.55vh', left: '37.91vw', width: '23.5vw' },
     ],
   },
 
