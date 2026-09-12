@@ -18,6 +18,11 @@
 // so they stay attached to the text if the board title is ever edited to
 // something longer or shorter than the mockup's default title.
 // doodles: everything else, each absolutely positioned on the board.
+//
+// Order here is what the edit page's theme picker shows, left to right:
+// Original first, then the rest in calendar order through the year
+// (usa stands in for both Memorial Day and the Fourth of July, placed by
+// the earlier of the two).
 export const THEMES = {
   og: {
     label: 'Original',
@@ -38,66 +43,6 @@ export const THEMES = {
     ],
   },
 
-  halloween: {
-    label: 'Halloween',
-    titleSpark: {
-      left: { src: 'spark_left.svg', width: '6.27vw' },
-      right: { src: 'spark_right.svg', width: '6.27vw' },
-    },
-    doodles: [
-      { src: 'jack_o_lantern.svg', top: '6.01vh', left: '2.05vw', width: '16.6vw' },
-      /* Mirrors jack_o_lantern's size/offset onto the right side. */
-      { src: 'bat.svg', top: '6.01vh', right: '2.05vw', width: '16.6vw' },
-      { src: 'halloween_sparkles_left.svg', top: '40.35vh', left: '5.98vw', width: '7.06vw' },
-      /* Mirrors halloween_sparkles_left's size/offset onto the right side. */
-      { src: 'halloween_sparkles_right.svg', top: '40.35vh', right: '5.98vw', width: '7.06vw' },
-      { src: 'witches_hat.svg', bottom: '2.86vh', left: '2.27vw', width: '22.53vw' },
-      { src: 'cauldron.svg', bottom: '2.86vh', right: '1.3vw', width: '19.85vw' },
-      { src: 'bottom_star.svg', bottom: '2.8vh', left: '38.6vw', width: '22.81vw' },
-    ],
-  },
-  thanksgiving: {
-    label: 'Thanksgiving',
-    titleSpark: {
-      left: { src: 'spark_left.svg', width: '6.27vw' },
-      right: { src: 'spark_right.svg', width: '6.27vw' },
-    },
-    doodles: [
-      { src: 'turkey.svg', top: '3.9vh', left: '1.95vw', width: '15.66vw' },
-      /* leaves.svg has a taller/narrower aspect ratio than turkey.svg, so
-         matching width alone (like the other mirrored pairs) left its box
-         taller than turkey's and crowded the sparkles below it. Sized here
-         so its visible artwork spans the same vertical range as turkey's,
-         mirrored, instead of just matching the box width. */
-      { src: 'leaves.svg', top: '4.54vh', right: '1.85vw', width: '13.22vw' },
-      { src: 'sparkles_left.svg', top: '43.97vh', left: '3.97vw', width: '9.09vw' },
-      { src: 'sparkles_right.svg', top: '43.97vh', right: '4.75vw', width: '9.09vw' },
-      { src: 'pumpkin.svg', bottom: '2.1vh', left: '1.95vw', width: '22.25vw' },
-      { src: 'cornucopia.svg', bottom: '1.98vh', right: '1.3vw', width: '20.37vw' },
-      { src: 'bottom_heart.svg', bottom: '4.87vh', left: '37.86vw', width: '24.17vw' },
-    ],
-  },
-  christmas: {
-    label: 'Christmas',
-    titleSpark: {
-      left: { src: 'spark_left.svg', width: '6.6vw' },
-      right: { src: 'spark_right.svg', width: '6.6vw' },
-    },
-    doodles: [
-      { src: 'mistletoe.svg', top: '5.99vh', left: '3.09vw', width: '14.72vw' },
-      /* Mirrors mistletoe's size/offset onto the right side. */
-      { src: 'jingle_bells.svg', top: '5.99vh', right: '3.09vw', width: '14.72vw' },
-      /* Mirrors sparkles_right's size/offset onto the left side (the two
-         files are pixel-identical, so a straight mirror lines up exactly).
-         top is set so the ink (this file has no internal padding) is
-         centered at 50% screen height. */
-      { src: 'sparkles_left.svg', top: '45.09vh', left: '7.11vw', width: '3.79vw' },
-      { src: 'sparkles_right.svg', top: '45.09vh', right: '7.11vw', width: '3.79vw' },
-      { src: 'christmas_tree.svg', bottom: '4.11vh', left: '2.94vw', width: '16.55vw' },
-      { src: 'champagne.svg', bottom: '4.72vh', right: '1.68vw', width: '17.55vw' },
-      { src: 'bottom_tree.svg', bottom: '3.96vh', left: '39.37vw', width: '21.21vw' },
-    ],
-  },
   valentines: {
     label: "Valentine's",
     titleSpark: {
@@ -117,6 +62,7 @@ export const THEMES = {
       { src: 'bottom_heart.svg', bottom: '6.11vh', left: '40.12vw', width: '19.73vw' },
     ],
   },
+
   'st-pattys': {
     label: "St. Patty's",
     titleSpark: {
@@ -133,27 +79,7 @@ export const THEMES = {
       { src: 'bottom_clover.svg', bottom: '5.28vh', left: '40.19vw', width: '19.58vw' },
     ],
   },
-  usa: {
-    label: 'USA',
-    titleSpark: {
-      left: { src: 'spark_left.svg', width: '6.6vw' },
-      right: { src: 'spark_right.svg', width: '6.6vw' },
-    },
-    doodles: [
-      { src: 'flag.svg', top: '2.64vh', left: '0.1vw', width: '16.04vw' },
-      /* Sized so its visible artwork spans the same vertical range as
-         flag's, mirrored (their aspect ratios differ enough that matching
-         width alone left it oversized). */
-      { src: 'firework.svg', top: '3.19vh', right: '2.19vw', width: '16.08vw' },
-      /* sparkles_left/right are near-identical mirror-image files; both
-         sized/positioned to match, and centered at 50% screen height. */
-      { src: 'sparkles_left.svg', top: '45.35vh', left: '7.58vw', width: '2.96vw' },
-      { src: 'sparkles_right.svg', top: '45.35vh', right: '7.58vw', width: '2.96vw' },
-      { src: 'grill.svg', bottom: '7.01vh', left: '2.7vw', width: '11.9vw' },
-      { src: 'poppies.svg', bottom: '4.86vh', right: '3.75vw', width: '9.87vw' },
-      { src: 'bottom_star.svg', bottom: '5.28vh', left: '40.19vw', width: '19.57vw' },
-    ],
-  },
+
   'mothers-day': {
     label: "Mother's Day",
     titleSpark: {
@@ -177,6 +103,29 @@ export const THEMES = {
       { src: 'bottom_heart.svg', bottom: '6.11vh', left: '40.12vw', width: '19.73vw' },
     ],
   },
+
+  usa: {
+    label: 'USA',
+    titleSpark: {
+      left: { src: 'spark_left.svg', width: '6.6vw' },
+      right: { src: 'spark_right.svg', width: '6.6vw' },
+    },
+    doodles: [
+      { src: 'flag.svg', top: '2.64vh', left: '0.1vw', width: '16.04vw' },
+      /* Sized so its visible artwork spans the same vertical range as
+         flag's, mirrored (their aspect ratios differ enough that matching
+         width alone left it oversized). */
+      { src: 'firework.svg', top: '3.19vh', right: '2.19vw', width: '16.08vw' },
+      /* sparkles_left/right are near-identical mirror-image files; both
+         sized/positioned to match, and centered at 50% screen height. */
+      { src: 'sparkles_left.svg', top: '45.35vh', left: '7.58vw', width: '2.96vw' },
+      { src: 'sparkles_right.svg', top: '45.35vh', right: '7.58vw', width: '2.96vw' },
+      { src: 'grill.svg', bottom: '7.01vh', left: '2.7vw', width: '11.9vw' },
+      { src: 'poppies.svg', bottom: '4.86vh', right: '3.75vw', width: '9.87vw' },
+      { src: 'bottom_star.svg', bottom: '5.28vh', left: '40.19vw', width: '19.57vw' },
+    ],
+  },
+
   'fathers-day': {
     label: "Father's Day",
     titleSpark: {
@@ -195,6 +144,69 @@ export const THEMES = {
       { src: 'utensils.svg', bottom: '7.29vh', left: '2.38vw', width: '18.99vw' },
       { src: 'beer.svg', bottom: '7.22vh', right: '3.36vw', width: '16.06vw' },
       { src: 'bottom_star.svg', bottom: '6.04vh', left: '40.08vw', width: '19.57vw' },
+    ],
+  },
+
+  halloween: {
+    label: 'Halloween',
+    titleSpark: {
+      left: { src: 'spark_left.svg', width: '6.27vw' },
+      right: { src: 'spark_right.svg', width: '6.27vw' },
+    },
+    doodles: [
+      { src: 'jack_o_lantern.svg', top: '6.01vh', left: '2.05vw', width: '16.6vw' },
+      /* Mirrors jack_o_lantern's size/offset onto the right side. */
+      { src: 'bat.svg', top: '6.01vh', right: '2.05vw', width: '16.6vw' },
+      { src: 'halloween_sparkles_left.svg', top: '40.35vh', left: '5.98vw', width: '7.06vw' },
+      /* Mirrors halloween_sparkles_left's size/offset onto the right side. */
+      { src: 'halloween_sparkles_right.svg', top: '40.35vh', right: '5.98vw', width: '7.06vw' },
+      { src: 'witches_hat.svg', bottom: '2.86vh', left: '2.27vw', width: '22.53vw' },
+      { src: 'cauldron.svg', bottom: '2.86vh', right: '1.3vw', width: '19.85vw' },
+      { src: 'bottom_star.svg', bottom: '2.8vh', left: '38.6vw', width: '22.81vw' },
+    ],
+  },
+
+  thanksgiving: {
+    label: 'Thanksgiving',
+    titleSpark: {
+      left: { src: 'spark_left.svg', width: '6.27vw' },
+      right: { src: 'spark_right.svg', width: '6.27vw' },
+    },
+    doodles: [
+      { src: 'turkey.svg', top: '3.9vh', left: '1.95vw', width: '15.66vw' },
+      /* leaves.svg has a taller/narrower aspect ratio than turkey.svg, so
+         matching width alone (like the other mirrored pairs) left its box
+         taller than turkey's and crowded the sparkles below it. Sized here
+         so its visible artwork spans the same vertical range as turkey's,
+         mirrored, instead of just matching the box width. */
+      { src: 'leaves.svg', top: '4.54vh', right: '1.85vw', width: '13.22vw' },
+      { src: 'sparkles_left.svg', top: '43.97vh', left: '3.97vw', width: '9.09vw' },
+      { src: 'sparkles_right.svg', top: '43.97vh', right: '4.75vw', width: '9.09vw' },
+      { src: 'pumpkin.svg', bottom: '2.1vh', left: '1.95vw', width: '22.25vw' },
+      { src: 'cornucopia.svg', bottom: '1.98vh', right: '1.3vw', width: '20.37vw' },
+      { src: 'bottom_heart.svg', bottom: '4.87vh', left: '37.86vw', width: '24.17vw' },
+    ],
+  },
+
+  christmas: {
+    label: 'Christmas',
+    titleSpark: {
+      left: { src: 'spark_left.svg', width: '6.6vw' },
+      right: { src: 'spark_right.svg', width: '6.6vw' },
+    },
+    doodles: [
+      { src: 'mistletoe.svg', top: '5.99vh', left: '3.09vw', width: '14.72vw' },
+      /* Mirrors mistletoe's size/offset onto the right side. */
+      { src: 'jingle_bells.svg', top: '5.99vh', right: '3.09vw', width: '14.72vw' },
+      /* Mirrors sparkles_right's size/offset onto the left side (the two
+         files are pixel-identical, so a straight mirror lines up exactly).
+         top is set so the ink (this file has no internal padding) is
+         centered at 50% screen height. */
+      { src: 'sparkles_left.svg', top: '45.09vh', left: '7.11vw', width: '3.79vw' },
+      { src: 'sparkles_right.svg', top: '45.09vh', right: '7.11vw', width: '3.79vw' },
+      { src: 'christmas_tree.svg', bottom: '4.11vh', left: '2.94vw', width: '16.55vw' },
+      { src: 'champagne.svg', bottom: '4.72vh', right: '1.68vw', width: '17.55vw' },
+      { src: 'bottom_tree.svg', bottom: '3.96vh', left: '39.37vw', width: '21.21vw' },
     ],
   },
 }
