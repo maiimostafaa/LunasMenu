@@ -87,12 +87,12 @@ export const THEMES = {
       right: { src: 'spark_right.svg', width: '6.6vw' },
     },
     doodles: [
-      { src: 'top_heart.svg', top: '6.67vh', left: '2.82vw', width: '11.43vw' },
+      { src: 'top_heart.svg', top: '6.67vh', left: '2.82vw', width: '9.72vw' },
       /* heart_coffee.svg is wider/shorter (aspect-wise) than top_heart.svg,
          so matching width alone left it oversized. Sized here so its
          visible artwork spans the same vertical range as top_heart's,
          mirrored. */
-      { src: 'heart_coffee.svg', top: '6.68vh', right: '2.39vw', width: '14.58vw' },
+      { src: 'heart_coffee.svg', top: '6.68vh', right: '2.39vw', width: '12.39vw' },
       /* sparkles_left/right are near-identical mirror-image files; both
          sized/positioned to match sparkles_left, and centered at 50%
          screen height. */
