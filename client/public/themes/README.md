@@ -13,8 +13,10 @@ themes/<theme>/
   doodles/          Each decoration as an individual export.
                     Prefer PNG at 2x over SVG — the Figma SVG exports embed a
                     huge PNG anyway, so direct PNGs are ~10x smaller.
-  fonts/            Only if the theme uses a font we don't already have.
 ```
+
+All themes share the same font (Sunday, already self-hosted in
+client/public/fonts/), so theme folders carry no fonts.
 
 Naming: lowercase, hyphens instead of spaces (`candy-cane.png`, not
 `Candy Cane.png`).
