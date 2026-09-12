@@ -111,11 +111,11 @@ export const THEMES = {
       right: { src: 'spark_right.svg', width: '6.6vw' },
     },
     doodles: [
-      { src: 'flag.svg', top: '2.64vh', left: '0.1vw', width: '16.04vw' },
+      { src: 'flag.svg', top: '2.64vh', left: '0.1vw', width: '12.83vw' },
       /* Sized so its visible artwork spans the same vertical range as
          flag's, mirrored (their aspect ratios differ enough that matching
          width alone left it oversized). */
-      { src: 'firework.svg', top: '3.19vh', right: '2.19vw', width: '16.08vw' },
+      { src: 'firework.svg', top: '3.19vh', right: '2.19vw', width: '12.86vw' },
       /* sparkles_left/right are near-identical mirror-image files; both
          sized/positioned to match, and centered at 50% screen height. */
       { src: 'sparkles_left.svg', top: '45.35vh', left: '7.58vw', width: '2.96vw' },
