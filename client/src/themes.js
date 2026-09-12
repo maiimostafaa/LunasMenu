@@ -154,14 +154,14 @@ export const THEMES = {
       right: { src: 'spark_right.svg', width: '6.27vw' },
     },
     doodles: [
-      { src: 'jack_o_lantern.svg', top: '6.01vh', left: '2.05vw', width: '16.6vw' },
+      { src: 'jack_o_lantern.svg', top: '6.01vh', left: '2.05vw', width: '13.28vw' },
       /* Mirrors jack_o_lantern's size/offset onto the right side. */
-      { src: 'bat.svg', top: '6.01vh', right: '2.05vw', width: '16.6vw' },
+      { src: 'bat.svg', top: '6.01vh', right: '2.05vw', width: '13.28vw' },
       { src: 'halloween_sparkles_left.svg', top: '40.35vh', left: '5.98vw', width: '7.06vw' },
       /* Mirrors halloween_sparkles_left's size/offset onto the right side. */
       { src: 'halloween_sparkles_right.svg', top: '40.35vh', right: '5.98vw', width: '7.06vw' },
-      { src: 'witches_hat.svg', bottom: '2.86vh', left: '2.27vw', width: '22.53vw' },
-      { src: 'cauldron.svg', bottom: '2.86vh', right: '1.3vw', width: '19.85vw' },
+      { src: 'witches_hat.svg', bottom: '2.86vh', left: '2.27vw', width: '18.02vw' },
+      { src: 'cauldron.svg', bottom: '2.86vh', right: '1.3vw', width: '15.88vw' },
       { src: 'bottom_star.svg', bottom: '2.8vh', left: '38.6vw', width: '22.81vw' },
     ],
   },
