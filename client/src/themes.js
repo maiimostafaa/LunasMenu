@@ -62,8 +62,12 @@ export const THEMES = {
     },
     doodles: [
       { src: 'turkey.svg', top: '3.9vh', left: '1.95vw', width: '15.66vw' },
-      /* Mirrors turkey's size/offset onto the right side. */
-      { src: 'leaves.svg', top: '3.9vh', right: '1.95vw', width: '15.66vw' },
+      /* leaves.svg has a taller/narrower aspect ratio than turkey.svg, so
+         matching width alone (like the other mirrored pairs) left its box
+         taller than turkey's and crowded the sparkles below it. Sized here
+         so its visible artwork spans the same vertical range as turkey's,
+         mirrored, instead of just matching the box width. */
+      { src: 'leaves.svg', top: '4.54vh', right: '1.85vw', width: '13.22vw' },
       { src: 'sparkles_left.svg', top: '43.97vh', left: '3.97vw', width: '9.09vw' },
       { src: 'sparkles_right.svg', top: '43.97vh', right: '4.75vw', width: '9.09vw' },
       { src: 'pumpkin.svg', bottom: '2.1vh', left: '1.95vw', width: '22.25vw' },
