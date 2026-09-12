@@ -139,9 +139,14 @@ export const THEMES = {
     },
     doodles: [
       { src: 'flag.svg', top: '2.64vh', left: '0.1vw', width: '20.05vw' },
-      { src: 'firework.svg', top: '3.96vh', right: '1.72vw', width: '22.28vw' },
-      { src: 'sparkles_left.svg', top: '34.63vh', left: '4.89vw', width: '8.21vw' },
-      { src: 'sparkles_right.svg', top: '43.48vh', right: '7.58vw', width: '2.96vw' },
+      /* Sized so its visible artwork spans the same vertical range as
+         flag's, mirrored (their aspect ratios differ enough that matching
+         width alone left it oversized). */
+      { src: 'firework.svg', top: '3.19vh', right: '2.19vw', width: '20.1vw' },
+      /* sparkles_left/right are near-identical mirror-image files; both
+         sized/positioned to match, and centered at 50% screen height. */
+      { src: 'sparkles_left.svg', top: '45.35vh', left: '7.58vw', width: '2.96vw' },
+      { src: 'sparkles_right.svg', top: '45.35vh', right: '7.58vw', width: '2.96vw' },
       { src: 'grill.svg', bottom: '7.01vh', left: '2.7vw', width: '14.88vw' },
       { src: 'poppies.svg', bottom: '4.86vh', right: '3.75vw', width: '12.34vw' },
       { src: 'bottom_star.svg', bottom: '5.28vh', left: '40.19vw', width: '19.57vw' },
