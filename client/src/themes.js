@@ -62,7 +62,8 @@ export const THEMES = {
     },
     doodles: [
       { src: 'turkey.svg', top: '3.9vh', left: '1.95vw', width: '15.66vw' },
-      { src: 'leaves.svg', top: '4.34vh', right: '2.91vw', width: '17.29vw' },
+      /* Mirrors turkey's size/offset onto the right side. */
+      { src: 'leaves.svg', top: '3.9vh', right: '1.95vw', width: '15.66vw' },
       { src: 'sparkles_left.svg', top: '43.97vh', left: '3.97vw', width: '9.09vw' },
       { src: 'sparkles_right.svg', top: '43.97vh', right: '4.75vw', width: '9.09vw' },
       { src: 'pumpkin.svg', bottom: '2.1vh', left: '1.95vw', width: '22.25vw' },
