@@ -70,8 +70,8 @@ export const THEMES = {
       right: { src: 'spark_right.svg', width: '6.6vw' },
     },
     doodles: [
-      { src: 'hat.svg', top: '3.75vh', left: '2.42vw', width: '13.62vw' },
-      { src: 'clover.svg', top: '5.97vh', right: '2.5vw', width: '10.69vw' },
+      { src: 'hat.svg', top: '3.75vh', left: '2.42vw', width: '11.58vw' },
+      { src: 'clover.svg', top: '5.97vh', right: '2.5vw', width: '9.09vw' },
       { src: 'sparkles_left.svg', top: '44.03vh', left: '9.3vw', width: '3.48vw' },
       { src: 'sparkles_right.svg', top: '44.73vh', right: '7.5vw', width: '3.36vw' },
       { src: 'gold.svg', bottom: '7.93vh', left: '1.22vw', width: '15.11vw' },
