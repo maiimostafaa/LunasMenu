@@ -50,7 +50,7 @@ export const THEMES = {
       /* Mirrors halloween_sparkles_left's size/offset onto the right side. */
       { src: 'halloween_sparkles_right.svg', top: '40.35vh', right: '5.98vw', width: '7.06vw' },
       { src: 'witches_hat.svg', bottom: '2.86vh', left: '2.27vw', width: '22.53vw' },
-      { src: 'cauldron.svg', bottom: '3vh', right: '1.3vw', width: '19.85vw' },
+      { src: 'cauldron.svg', bottom: '2.86vh', right: '1.3vw', width: '19.85vw' },
       { src: 'bottom_star.svg', bottom: '2.8vh', left: '38.6vw', width: '22.81vw' },
     ],
   },
