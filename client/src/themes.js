@@ -195,17 +195,17 @@ export const THEMES = {
       right: { src: 'spark_right.svg', width: '6.6vw' },
     },
     doodles: [
-      { src: 'mistletoe.svg', top: '5.99vh', left: '3.09vw', width: '14.72vw' },
+      { src: 'mistletoe.svg', top: '5.99vh', left: '3.09vw', width: '11.78vw' },
       /* Mirrors mistletoe's size/offset onto the right side. */
-      { src: 'jingle_bells.svg', top: '5.99vh', right: '3.09vw', width: '14.72vw' },
+      { src: 'jingle_bells.svg', top: '5.99vh', right: '3.09vw', width: '11.78vw' },
       /* Mirrors sparkles_right's size/offset onto the left side (the two
          files are pixel-identical, so a straight mirror lines up exactly).
          top is set so the ink (this file has no internal padding) is
          centered at 50% screen height. */
       { src: 'sparkles_left.svg', top: '45.09vh', left: '7.11vw', width: '3.79vw' },
       { src: 'sparkles_right.svg', top: '45.09vh', right: '7.11vw', width: '3.79vw' },
-      { src: 'christmas_tree.svg', bottom: '4.11vh', left: '2.94vw', width: '16.55vw' },
-      { src: 'champagne.svg', bottom: '4.72vh', right: '1.68vw', width: '17.55vw' },
+      { src: 'christmas_tree.svg', bottom: '4.11vh', left: '2.94vw', width: '13.24vw' },
+      { src: 'champagne.svg', bottom: '4.72vh', right: '1.68vw', width: '14.04vw' },
       { src: 'bottom_tree.svg', bottom: '3.96vh', left: '39.37vw', width: '21.21vw' },
     ],
   },
