@@ -183,7 +183,11 @@ export const THEMES = {
     },
     doodles: [
       { src: 'hat.svg', top: '7.36vh', left: '1.95vw', width: '17.7vw' },
-      { src: 'mustache.svg', top: '2.72vh', right: '0.59vw', width: '24.56vw' },
+      /* mustache.svg is taller/narrower (aspect-wise) than hat.svg and has
+         more internal padding, so matching width alone left it oversized.
+         Sized here so its visible artwork spans the same vertical range as
+         hat's, mirrored. */
+      { src: 'mustache.svg', top: '2vh', right: '0vw', width: '18.1vw' },
       { src: 'sparkles_left.svg', top: '40.97vh', left: '9.3vw', width: '2.89vw' },
       { src: 'sparkles_right.svg', top: '40.97vh', right: '9.02vw', width: '2.93vw' },
       { src: 'utensils.svg', bottom: '7.29vh', left: '2.38vw', width: '18.99vw' },
