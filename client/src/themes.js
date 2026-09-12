@@ -50,15 +50,15 @@ export const THEMES = {
       right: { src: 'spark_right.svg', width: '6.6vw' },
     },
     doodles: [
-      { src: 'top_heart.svg', top: '6.74vh', left: '2.86vw', width: '14.22vw' },
+      { src: 'top_heart.svg', top: '6.74vh', left: '2.86vw', width: '11.38vw' },
       /* gift.svg is a bit wider/shorter (aspect-wise) than top_heart.svg, so
          matching width alone left it oversized. Sized here so its visible
          artwork spans the same vertical range as top_heart's, mirrored. */
-      { src: 'gift.svg', top: '6.56vh', right: '3.09vw', width: '16.63vw' },
+      { src: 'gift.svg', top: '6.56vh', right: '3.09vw', width: '13.3vw' },
       { src: 'sparkles_left.svg', top: '45.14vh', left: '7.97vw', width: '2.66vw' },
       { src: 'sparkles_right.svg', top: '45.14vh', right: '8.44vw', width: '2.66vw' },
-      { src: 'roses.svg', bottom: '6.17vh', left: '2.2vw', width: '16.98vw' },
-      { src: 'cupcake.svg', bottom: '4.51vh', right: '2.27vw', width: '17.85vw' },
+      { src: 'roses.svg', bottom: '6.17vh', left: '2.2vw', width: '13.58vw' },
+      { src: 'cupcake.svg', bottom: '4.51vh', right: '2.27vw', width: '14.28vw' },
       { src: 'bottom_heart.svg', bottom: '6.11vh', left: '40.12vw', width: '19.73vw' },
     ],
   },
