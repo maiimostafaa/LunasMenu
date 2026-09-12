@@ -138,7 +138,7 @@ export const THEMES = {
          more internal padding, so matching width alone left it oversized.
          Sized here so its visible artwork spans the same vertical range as
          hat's, mirrored. */
-      { src: 'mustache.svg', top: '2vh', right: '0vw', width: '12.31vw' },
+      { src: 'mustache.svg', top: '2vh', right: '3.36vw', width: '12.31vw' },
       { src: 'sparkles_left.svg', top: '40.97vh', left: '9.3vw', width: '2.89vw' },
       { src: 'sparkles_right.svg', top: '40.97vh', right: '9.02vw', width: '2.93vw' },
       { src: 'utensils.svg', bottom: '7.29vh', left: '2.38vw', width: '15.19vw' },
