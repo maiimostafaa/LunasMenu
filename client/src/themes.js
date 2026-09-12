@@ -16,19 +16,24 @@
 // titleSpark: the two small flourishes flanking the title text, rendered
 // inside the same flex row as the title itself (not absolutely positioned)
 // so they stay attached to the text if the board title is ever edited to
-// something longer or shorter than the mockup's default title.
+// something longer or shorter than the mockup's default title. Every theme
+// uses the same TITLE_SPARK_WIDTH (matching the Original theme's own
+// sparks) so this flourish reads at a consistent size no matter which
+// theme is active.
 // doodles: everything else, each absolutely positioned on the board.
 //
 // Order here is what the edit page's theme picker shows, left to right:
 // Original first, then the rest in calendar order through the year
 // (usa stands in for both Memorial Day and the Fourth of July, placed by
 // the earlier of the two).
+const TITLE_SPARK_WIDTH = '5.4vw'
+
 export const THEMES = {
   og: {
     label: 'Original',
     titleSpark: {
-      left: { src: 'spark-left.svg', width: '5.4vw' },
-      right: { src: 'spark-right.svg', width: '5.4vw' },
+      left: { src: 'spark-left.svg', width: TITLE_SPARK_WIDTH },
+      right: { src: 'spark-right.svg', width: TITLE_SPARK_WIDTH },
     },
     doodles: [
       { src: 'coffee.svg', top: '4.4vh', left: '2.7vw', width: '12vw' },
@@ -46,8 +51,8 @@ export const THEMES = {
   valentines: {
     label: "Valentine's",
     titleSpark: {
-      left: { src: 'spark_left.svg', width: '6.6vw' },
-      right: { src: 'spark_right.svg', width: '6.6vw' },
+      left: { src: 'spark_left.svg', width: TITLE_SPARK_WIDTH },
+      right: { src: 'spark_right.svg', width: TITLE_SPARK_WIDTH },
     },
     doodles: [
       { src: 'top_heart.svg', top: '6.74vh', left: '2.86vw', width: '9.67vw' },
@@ -66,8 +71,8 @@ export const THEMES = {
   'st-pattys': {
     label: "St. Patty's",
     titleSpark: {
-      left: { src: 'spark_left.svg', width: '6.6vw' },
-      right: { src: 'spark_right.svg', width: '6.6vw' },
+      left: { src: 'spark_left.svg', width: TITLE_SPARK_WIDTH },
+      right: { src: 'spark_right.svg', width: TITLE_SPARK_WIDTH },
     },
     doodles: [
       { src: 'hat.svg', top: '3.75vh', left: '2.42vw', width: '11.58vw' },
@@ -83,8 +88,8 @@ export const THEMES = {
   'mothers-day': {
     label: "Mother's Day",
     titleSpark: {
-      left: { src: 'spark_left.svg', width: '6.6vw' },
-      right: { src: 'spark_right.svg', width: '6.6vw' },
+      left: { src: 'spark_left.svg', width: TITLE_SPARK_WIDTH },
+      right: { src: 'spark_right.svg', width: TITLE_SPARK_WIDTH },
     },
     doodles: [
       { src: 'top_heart.svg', top: '6.67vh', left: '2.82vw', width: '9.72vw' },
@@ -107,8 +112,8 @@ export const THEMES = {
   usa: {
     label: 'USA',
     titleSpark: {
-      left: { src: 'spark_left.svg', width: '6.6vw' },
-      right: { src: 'spark_right.svg', width: '6.6vw' },
+      left: { src: 'spark_left.svg', width: TITLE_SPARK_WIDTH },
+      right: { src: 'spark_right.svg', width: TITLE_SPARK_WIDTH },
     },
     doodles: [
       { src: 'flag.svg', top: '2.64vh', left: '0.1vw', width: '12.83vw' },
@@ -129,8 +134,8 @@ export const THEMES = {
   'fathers-day': {
     label: "Father's Day",
     titleSpark: {
-      left: { src: 'spark_left.svg', width: '6.6vw' },
-      right: { src: 'spark_right.svg', width: '6.6vw' },
+      left: { src: 'spark_left.svg', width: TITLE_SPARK_WIDTH },
+      right: { src: 'spark_right.svg', width: TITLE_SPARK_WIDTH },
     },
     doodles: [
       { src: 'hat.svg', top: '7.36vh', left: '1.95vw', width: '12.04vw' },
@@ -150,8 +155,8 @@ export const THEMES = {
   halloween: {
     label: 'Halloween',
     titleSpark: {
-      left: { src: 'spark_left.svg', width: '6.27vw' },
-      right: { src: 'spark_right.svg', width: '6.27vw' },
+      left: { src: 'spark_left.svg', width: TITLE_SPARK_WIDTH },
+      right: { src: 'spark_right.svg', width: TITLE_SPARK_WIDTH },
     },
     doodles: [
       { src: 'jack_o_lantern.svg', top: '6.01vh', left: '2.05vw', width: '13.28vw' },
@@ -169,8 +174,8 @@ export const THEMES = {
   thanksgiving: {
     label: 'Thanksgiving',
     titleSpark: {
-      left: { src: 'spark_left.svg', width: '6.27vw' },
-      right: { src: 'spark_right.svg', width: '6.27vw' },
+      left: { src: 'spark_left.svg', width: TITLE_SPARK_WIDTH },
+      right: { src: 'spark_right.svg', width: TITLE_SPARK_WIDTH },
     },
     doodles: [
       { src: 'turkey.svg', top: '3.9vh', left: '1.95vw', width: '10.65vw' },
@@ -191,8 +196,8 @@ export const THEMES = {
   christmas: {
     label: 'Christmas',
     titleSpark: {
-      left: { src: 'spark_left.svg', width: '6.6vw' },
-      right: { src: 'spark_right.svg', width: '6.6vw' },
+      left: { src: 'spark_left.svg', width: TITLE_SPARK_WIDTH },
+      right: { src: 'spark_right.svg', width: TITLE_SPARK_WIDTH },
     },
     doodles: [
       { src: 'mistletoe.svg', top: '5.99vh', left: '3.09vw', width: '10.01vw' },
