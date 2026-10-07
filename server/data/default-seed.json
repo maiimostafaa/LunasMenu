@@ -1,5 +1,6 @@
 {
   "title": "Daily Specials",
+  "theme": "og",
   "items": [
     { "id": "1", "name": "Country Fried Steak & Eggs", "price": 12.29, "active": true },
     { "id": "2", "name": "Greek Skillet", "price": 9.99, "active": true },

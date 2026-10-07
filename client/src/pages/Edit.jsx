@@ -1,10 +1,17 @@
 import { useEffect, useState } from 'react'
 import { fetchSpecials, saveSpecials, login } from '../api.js'
+import { THEMES, DEFAULT_THEME, themeDoodleSrc } from '../themes.js'
 
 const TOKEN_KEY = 'specials-board-token'
 
+// crypto.randomUUID only exists on secure origins (https/localhost); phones
+// load this page over plain http from the Pi, so fall back to a cheap id.
+function makeId() {
+  return crypto.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`
+}
+
 function emptyItem() {
-  return { id: crypto.randomUUID(), name: '', price: '', active: true }
+  return { id: makeId(), name: '', price: '', active: true }
 }
 
 export default function Edit() {
@@ -13,6 +20,7 @@ export default function Edit() {
   const [pinError, setPinError] = useState('')
 
   const [title, setTitle] = useState('Daily Specials')
+  const [theme, setTheme] = useState(DEFAULT_THEME)
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(true)
   const [status, setStatus] = useState('')
@@ -21,6 +29,7 @@ export default function Edit() {
     fetchSpecials()
       .then((data) => {
         setTitle(data.title || 'Daily Specials')
+        setTheme(THEMES[data.theme] ? data.theme : DEFAULT_THEME)
         setItems(data.items || [])
       })
       .finally(() => setLoading(false))
@@ -63,7 +72,7 @@ export default function Edit() {
   async function handleSave() {
     setStatus('Saving...')
     try {
-      await saveSpecials(token, { title, items })
+      await saveSpecials(token, { title, items, theme })
       setStatus('Saved — the TV should update now.')
     } catch (err) {
       if (err.message?.toLowerCase().includes('not authorized')) {
@@ -124,6 +133,20 @@ export default function Edit() {
           marginBottom: 16,
         }}
       />
+
+      <div className="theme-picker">
+        {Object.entries(THEMES).map(([id, t]) => (
+          <button
+            key={id}
+            type="button"
+            className={`theme-swatch${theme === id ? ' selected' : ''}`}
+            onClick={() => setTheme(id)}
+          >
+            <img src={themeDoodleSrc(id, t.titleSpark.left.src)} alt="" />
+            <span>{t.label}</span>
+          </button>
+        ))}
+      </div>
 
       {items.map((item, index) => (
         <div className={`item-row${item.active === false ? ' inactive' : ''}`} key={item.id}>

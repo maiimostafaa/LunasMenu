@@ -83,13 +83,21 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.7vh;
+  gap: 0.126em;
   text-align: center;
   max-width: 78vw;
+  /* Scale with item count so any number of specials fits the 58vh menu
+     area: 3.13vw is the mockup-matched size (reached at 8 items), and the
+     calc shrinks the lines to keep N of them (line-height 1.2 + gap)
+     inside the space between title and heart. --width-scale is set from
+     JS only when a single line would overflow horizontally. */
+  font-size: calc(
+    clamp(1rem, 58vh / (1.326 * var(--item-count, 8) - 0.126), 3.13vw) *
+    var(--width-scale, 1)
+  );
 }
 
 .board-item {
-  font-size: clamp(1.2rem, 3.13vw, 4rem);
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -98,55 +106,10 @@ button {
   margin-left: 0.55em;
 }
 
+/* Doodle position/size come from each theme's config (client/src/themes.js)
+   as inline styles — this just establishes the positioning context. */
 .board-doodle {
   position: absolute;
-}
-
-/* Sizes and positions below are measured off the Figma mockup (TV - 1). */
-.board-doodle.top-left {
-  top: 4.4vh;
-  left: 2.7vw;
-  width: 12vw;
-}
-
-.board-doodle.top-right {
-  top: 4.4vh;
-  right: 2.4vw;
-  width: 11.8vw;
-}
-
-.board-doodle.bottom-left {
-  bottom: 8vh;
-  left: 2.7vw;
-  width: 19vw;
-}
-
-.board-doodle.bottom-right {
-  bottom: 7.2vh;
-  right: 2.3vw;
-  width: 20vw;
-}
-
-/* top is set so the clusters' visible ink is centered at 50% screen height. */
-.board-doodle.mid-left {
-  top: 44.1vh;
-  left: 5.9vw;
-  width: 7.5vw;
-}
-
-.board-doodle.mid-right {
-  top: 44.1vh;
-  right: 5.9vw;
-  width: 7.5vw;
-}
-
-/* The heart SVG has transparent padding; these offsets place its visible
-   ink at the mockup's position (85-90% of screen height). */
-.board-doodle.bottom-center {
-  bottom: 7.55vh;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 23.5vw;
 }
 
 .board-empty {
@@ -218,6 +181,45 @@ button {
   color: var(--danger);
   text-align: center;
   min-height: 1.2em;
+}
+
+.theme-picker {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 16px;
+}
+
+.theme-swatch {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 68px;
+  padding: 8px 4px;
+  border-radius: 10px;
+  border: 2px solid var(--muted);
+  background: #262420;
+  color: var(--fg);
+}
+
+.theme-swatch.selected {
+  border-color: var(--accent);
+  background: #33291a;
+}
+
+.theme-swatch img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.theme-swatch span {
+  font-size: 0.7rem;
+  text-align: center;
+  line-height: 1.1;
 }
 
 .item-row {

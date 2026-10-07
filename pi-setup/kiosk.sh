@@ -4,8 +4,13 @@
 # otherwise put the TV to sleep. Meant to be run automatically on login
 # (see pi-setup/README.md).
 
-# Give the server a moment to come up on boot before Chromium tries to load it.
-sleep 5
+# Wait for the server to come up on boot before Chromium tries to load it
+# (cap the wait so a broken server still leaves a visible error page to
+# debug rather than a blank desktop).
+for _ in $(seq 1 30); do
+  curl -sf http://localhost:3000/api/specials >/dev/null && break
+  sleep 2
+done
 
 # Disable screen blanking and power management for this X session.
 xset s off
@@ -15,8 +20,12 @@ xset -dpms
 # Hide the mouse cursor when idle (requires: sudo apt install unclutter).
 unclutter -idle 0.5 -root &
 
-chromium-browser \
+# Package name differs across Raspberry Pi OS releases.
+BROWSER=$(command -v chromium-browser || command -v chromium)
+
+"$BROWSER" \
   --kiosk \
+  --password-store=basic \
   --noerrdialogs \
   --disable-infobars \
   --incognito \
